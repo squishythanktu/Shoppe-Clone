@@ -74,7 +74,7 @@ export default function Register() {
               <Input
                 name='confirm_password'
                 register={register}
-                type='confirm_password'
+                type='password'
                 clasName='mt-2'
                 errorMessage={errors.confirm_password?.message}
                 placeholder='Confirm Password'
