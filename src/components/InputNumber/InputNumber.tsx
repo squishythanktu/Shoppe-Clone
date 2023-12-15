@@ -1,12 +1,12 @@
 import { InputHTMLAttributes, forwardRef } from 'react'
 
-interface Props extends InputHTMLAttributes<HTMLInputElement> {
+export interface InputNumberProps extends InputHTMLAttributes<HTMLInputElement> {
   errorMessage?: string
   classNameInput?: string
   classNameError?: string
 }
 
-const InputNumber = forwardRef<HTMLInputElement, Props>(function InputNumberInner(
+const InputNumber = forwardRef<HTMLInputElement, InputNumberProps>(function InputNumberInner(
   {
     errorMessage,
     className,
@@ -14,7 +14,7 @@ const InputNumber = forwardRef<HTMLInputElement, Props>(function InputNumberInne
     classNameError = 'mt-1 text-red-600 text-sm min-h-[1.25rem]',
     onChange,
     ...rest
-  }: Props,
+  }: InputNumberProps,
   ref
 ) {
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
