@@ -108,14 +108,14 @@ export default function ProductDetail() {
           <div className='grid grid-cols-12 gap-9'>
             <div className='col-span-5'>
               <div
-                className='relative w-full pt-[100%]  cursor-zoom-in shadow overflow-hidden'
+                className='relative w-full cursor-zoom-in  overflow-hidden pt-[100%] shadow'
                 onMouseMove={handleZoom}
                 onMouseLeave={handleRemoveZoom}
               >
                 <img
                   src={activeImage}
                   alt={product.name}
-                  className='absolute pointer-events-none top-0 left-0 h-full w-full bg-white object-cover'
+                  className='pointer-events-none absolute left-0 top-0 h-full w-full bg-white object-cover'
                   ref={imageRef}
                 />
               </div>
@@ -130,7 +130,7 @@ export default function ProductDetail() {
                     viewBox='0 0 24 24'
                     strokeWidth={1.5}
                     stroke='currentColor'
-                    className='w-5 h-5'
+                    className='h-5 w-5'
                   >
                     <path strokeLinecap='round' strokeLinejoin='round' d='M15.75 19.5L8.25 12l7.5-7.5' />
                   </svg>
@@ -142,7 +142,7 @@ export default function ProductDetail() {
                       <img
                         src={img}
                         alt={product.name}
-                        className='absolute top-0 left-0 h-full w-full bg-white object-cover'
+                        className='absolute left-0 top-0 h-full w-full bg-white object-cover'
                       />
                       {isActive && <div className='absolute inset-0 border-2 border-orange'></div>}
                     </div>
@@ -158,7 +158,7 @@ export default function ProductDetail() {
                     viewBox='0 0 24 24'
                     strokeWidth={1.5}
                     stroke='currentColor'
-                    className='w-5 h-5'
+                    className='h-5 w-5'
                   >
                     <path strokeLinecap='round' strokeLinejoin='round' d='M8.25 4.5l7.5 7.5-7.5 7.5' />
                   </svg>
@@ -242,7 +242,7 @@ export default function ProductDetail() {
         <div className='container'>
           <div className='bg-white p-4 shadow'>
             <div className='rounded bg-gray-50 p-4 text-lg capitalize text-slate-700'>Mô tả sản phẩm</div>
-            <div className='mx-4 mt-12 mb-4 text-sm leading-loose'>
+            <div className='mx-4 mb-4 mt-12 text-sm leading-loose'>
               <div
                 dangerouslySetInnerHTML={{
                   __html: DOMPurify.sanitize(product.description)
@@ -256,7 +256,7 @@ export default function ProductDetail() {
         <div className='container'>
           <div className='uppercase text-gray-400'>Có thể bạn cũng thích</div>
           {productsData && (
-            <div className='mt-6 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-6 gap-3'>
+            <div className='mt-6 grid grid-cols-2 gap-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-6'>
               {productsData.data.data.products.map((product) => (
                 <div className='col-span-1' key={product._id}>
                   <Product product={product} />

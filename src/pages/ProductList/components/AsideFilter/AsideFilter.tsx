@@ -80,7 +80,7 @@ export default function AsideFilter({ queryConfig, categories }: Props) {
         </svg>
         Tất cả danh mục
       </Link>
-      <div className='bg-gray-300 h-[1px] my-4'></div>
+      <div className='my-4 h-[1px] bg-gray-300'></div>
       <ul>
         {categories.map((categoryItem) => {
           const isActive = category === categoryItem._id
@@ -96,11 +96,11 @@ export default function AsideFilter({ queryConfig, categories }: Props) {
                   }).toString()
                 }}
                 className={classNames('relative px-2', {
-                  'text-orange font-semibold': isActive
+                  'font-semibold text-orange': isActive
                 })}
               >
                 {isActive && (
-                  <svg viewBox='0 0 4 7' className='absolute top-1 left-[-10px] h-2 w-2 fill-orange'>
+                  <svg viewBox='0 0 4 7' className='absolute left-[-10px] top-1 h-2 w-2 fill-orange'>
                     <polygon points='4 3.5 0 0 0 7' />
                   </svg>
                 )}
@@ -110,7 +110,7 @@ export default function AsideFilter({ queryConfig, categories }: Props) {
           )
         })}
       </ul>
-      <Link to={path.home} className='flex items-center font-bold mt-4 uppercase'>
+      <Link to={path.home} className='mt-4 flex items-center font-bold uppercase'>
         <svg
           enableBackground='new 0 0 15 15'
           viewBox='0 0 15 15'
@@ -130,7 +130,7 @@ export default function AsideFilter({ queryConfig, categories }: Props) {
         </svg>
         Bộ lọc tìm kiếm
       </Link>
-      <div className='bg-gray-300 h-[1px] my-4'></div>
+      <div className='my-4 h-[1px] bg-gray-300'></div>
       <div className='my-5'>
         <div>Khoảng giá</div>
         <form className='mt-2' onSubmit={onSubmit}>
@@ -177,19 +177,19 @@ export default function AsideFilter({ queryConfig, categories }: Props) {
               }}
             />
           </div>
-          <div className='mt-1 text-red-600 text-sm min-h-[1.25rem] text-center'>{errors.price_min?.message}</div>
-          <Button className='w-full p-2 uppercase bg-orange text-white text-sm hover:bg-orange/80 flex justify-center items-center'>
+          <div className='mt-1 min-h-[1.25rem] text-center text-sm text-red-600'>{errors.price_min?.message}</div>
+          <Button className='flex w-full items-center justify-center bg-orange p-2 text-sm uppercase text-white hover:bg-orange/80'>
             Áp dụng
           </Button>
         </form>
       </div>
-      <div className='bg-gray-300 h-[1px] my-4'></div>
+      <div className='my-4 h-[1px] bg-gray-300'></div>
       <div className='text-sm'>Đánh giá</div>
       <RatingStars queryConfig={queryConfig} />
-      <div className='bg-gray-300 h-[1px] my-4'></div>
+      <div className='my-4 h-[1px] bg-gray-300'></div>
       <Button
         onClick={handleRemoveAll}
-        className='w-full p-2 uppercase bg-orange text-white text-sm hover:bg-orange/80 flex justify-center items-center'
+        className='flex w-full items-center justify-center bg-orange p-2 text-sm uppercase text-white hover:bg-orange/80'
       >
         Xóa tất cả
       </Button>

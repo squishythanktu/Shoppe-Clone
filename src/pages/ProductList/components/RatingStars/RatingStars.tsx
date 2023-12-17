@@ -27,7 +27,7 @@ export default function RatingStars({ queryConfig }: Props) {
           return (
             <li className='py-1 pl-2' key={index}>
               <div
-                className='flex items-center text-sm cursor-pointer'
+                className='flex cursor-pointer items-center text-sm'
                 onClick={() => handleFilterStar(5 - index)}
                 aria-hidden='true'
               >
@@ -36,7 +36,7 @@ export default function RatingStars({ queryConfig }: Props) {
                   .map((_, indexStar) => {
                     if (indexStar < 5 - index) {
                       return (
-                        <svg viewBox='0 0 9.5 8' className='w-4 h-4 mr-1' key={index}>
+                        <svg viewBox='0 0 9.5 8' className='mr-1 h-4 w-4' key={index}>
                           <defs>
                             <linearGradient id='ratingStarGradient' x1='50%' x2='50%' y1='0%' y2='100%'>
                               <stop offset={0} stopColor='#ffca11' />
