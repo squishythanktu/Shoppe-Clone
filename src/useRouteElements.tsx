@@ -71,7 +71,7 @@ export default function useRouteElements() {
           children: [
             { path: path.profile, element: <Profile /> },
             { path: path.changePassword, element: <ChangePassword /> },
-            { path: path.historyPurchase, element: <HistoryPurchase /> },
+            { path: path.historyPurchase, element: <HistoryPurchase /> }
           ]
         }
       ]
